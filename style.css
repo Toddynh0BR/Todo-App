@@ -2,6 +2,8 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
+ font-family: "Josefin Sans", sans-serif;
+ font-size: 1.8rem;
 }
 
 :root {
@@ -28,3 +30,109 @@
 --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 --Light-Hover: hsl(192, 100%, 67%);
 }
+
+
+/*Dark-Mode*/
+.bg-desktop-dark {
+ width: 100%;
+ position: absolute;
+ top: 0;
+ z-index: -9999;
+}
+
+html.dark {
+ background-color: var(--Very-Dark-Blue);
+}
+html:not(.dark) .bg-desktop-dark,
+html:not(.dark) .btnSun{
+ display: none;
+}
+
+
+/*Light-Mode*/
+.bg-desktop-light {
+ width: 100%;
+ position: absolute;
+ top: 0;
+ z-index: -9999;   
+}
+
+html.dark .bg-desktop-light,
+html.dark .btnMoon{
+ display: none;
+}
+
+
+/*Header*/
+header {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ width: 51rem;
+ margin: auto;
+ margin-top: 7.3rem;
+}
+
+h1 {
+ font-size: 4rem;
+ font-weight: 700;
+ letter-spacing: 1.2rem;
+ color: var(--Very-Light-Gray);
+}
+
+.btnMoon:hover, .btnSun:hover {
+ cursor: pointer;
+}
+
+/*input*/
+.input {
+ display: flex;
+ width: 51rem;
+ margin: auto;
+ margin-top: 3.8rem;
+
+ padding: 2rem;
+ border-radius: .5rem;
+}
+
+#todoInput {
+ background: none;
+ border: none;
+ outline: none;
+ caret-color: var(--Bright-Blue);
+ color: var(--Light-Grayish-Blue);
+ width: 43rem;
+}
+#todoInput::placeholder {
+ color: var(--Dark-Grayish-Blue);
+}
+#todoInput:focus::placeholder{
+ opacity: 0;
+}
+
+
+html.dark .input {
+ background-color: var(--Very-Dark-Desaturated-Blue);
+}
+html:not(.dark) .input{
+ background-color: var(--Very-Light-Gray);
+}
+html:not(.dark) #todoInput {
+ color: var(--Very-Dark-Grayish-Blue);
+}
+
+.wrapper {
+ display: flex;
+ align-items: center;
+ gap: 2rem;
+}
+
+.circle-input {
+ border: 1px solid var(--Very-Dark-Grayish-Blue);
+ border-radius: 50%;
+ height: 2.5rem;
+ width: 2.5rem;
+ opacity: .4;
+}
+
