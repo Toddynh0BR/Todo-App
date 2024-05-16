@@ -3,9 +3,11 @@
  padding: 0;
  box-sizing: border-box;
  font-family: "Josefin Sans", sans-serif;
- font-size: 1.8rem;
 }
 
+input, body {
+ font-size: 1.8rem;
+}
 :root {
  font-size: 62.5%;
 
@@ -32,12 +34,20 @@
 }
 
 
+
+
+
+
+
 /*Dark-Mode*/
 .bg-desktop-dark {
  width: 100%;
  position: absolute;
  top: 0;
  z-index: -9999;
+
+ animation-name: bg-desktop;
+ animation-duration: 2s;
 }
 
 html.dark {
@@ -49,29 +59,59 @@ html:not(.dark) .btnSun{
 }
 
 
+
+
+
+
+
+
 /*Light-Mode*/
 .bg-desktop-light {
  width: 100%;
  position: absolute;
- top: 0;
- z-index: -9999;   
+ top: 0rem;
+ z-index: -9999;  
+ 
+ 
+ animation-name: bg-desktop;
+ animation-duration: 2s;
 }
 
+html:not(.dark){
+background-color: var(--Very-Light-Grayish-Blue);
+}
 html.dark .bg-desktop-light,
 html.dark .btnMoon{
  display: none;
 }
 
 
+
+
+
+
+
+
 /*Header*/
 header {
  display: flex;
  align-items: center;
- justify-content: space-between;
+ flex-direction: column;
 
  width: 51rem;
  margin: auto;
  margin-top: 7.3rem;
+
+ animation-name: header;
+ animation-duration: 2.01s;
+}
+
+
+.partOne {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ width: 100%;
 }
 
 h1 {
@@ -85,6 +125,12 @@ h1 {
  cursor: pointer;
 }
 
+
+
+
+
+
+
 /*input*/
 .input {
  display: flex;
@@ -92,7 +138,7 @@ h1 {
  margin: auto;
  margin-top: 3.8rem;
 
- padding: 2rem;
+ padding: 1.6rem 2rem;
  border-radius: .5rem;
 }
 
@@ -136,3 +182,83 @@ html:not(.dark) #todoInput {
  opacity: .4;
 }
 
+
+
+
+/*main*/
+main {
+width: 51rem;
+border-radius: .5rem;
+
+
+margin: auto;
+margin-top: 2.5rem;
+
+overflow: hidden;
+background-color: var(--Very-Light-Gray);
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ height: 4rem;
+ padding: 2.3rem;
+
+ color: var(--Dark-Grayish-Blue);
+ font-size: 1.2rem;
+}
+
+#ClearCompleted:hover {
+ color: var(--Very-Dark-Grayish-Blue);
+ cursor: pointer;
+ transition: .3s ease-in-out;
+}
+
+.TODOS {
+ display: flex;
+ flex-direction: column;
+ gap: 0;
+}
+
+#TODO {
+ display: flex;
+ align-items: center;
+
+ padding: 1.5rem 2rem;
+ gap: 2rem;
+ border-bottom: 1px solid var(-);
+}
+
+.TODOandDelete {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ width: 100%;
+}
+
+.circle {
+ border: 1px solid var(--Very-Dark-Grayish-Blue);
+ border-radius: 50%;
+ height: 2.5rem;
+ width: 2.7rem;
+ opacity: .4;
+}
+
+#MyTodo {
+ color: var(--Very-Dark-Grayish-Blue);
+}
+
+/*animations*/
+
+@keyframes bg-desktop {
+ 0% {top: -29rem}
+ 100% {top: -0}
+}
+@keyframes header {
+0% { margin-top: -15rem}
+100% { margin-top: 7.3rem;}
+}
