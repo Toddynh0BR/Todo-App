@@ -20,7 +20,7 @@ input, body {
 --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
 --Light-Grayish-Blue: hsl(234, 39%, 85%);
 --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
---Dark-Grayish-Blue: hsl(234, 11%, 52%);
+--Dark-Grayish-Blue-Dark: hsl(234, 11%, 52%);
 --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
 --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
 --Dark-Hover: hsl(280, 87%, 65%);
@@ -87,6 +87,15 @@ html.dark .btnMoon{
 
 
 
+html.dark .input {
+    background-color: var(--Very-Dark-Desaturated-Blue);
+   }
+   html:not(.dark) .input{
+    background-color: var(--Very-Light-Gray);
+   }
+   html:not(.dark) #todoInput {
+    color: var(--Very-Dark-Grayish-Blue);
+   }
 
 
 
@@ -158,15 +167,6 @@ h1 {
 }
 
 
-html.dark .input {
- background-color: var(--Very-Dark-Desaturated-Blue);
-}
-html:not(.dark) .input{
- background-color: var(--Very-Light-Gray);
-}
-html:not(.dark) #todoInput {
- color: var(--Very-Dark-Grayish-Blue);
-}
 
 .wrapper {
  display: flex;
@@ -229,7 +229,7 @@ box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 
  padding: 1.5rem 2rem;
  gap: 2rem;
- border-bottom: 1px solid var(-);
+ border-bottom: 1px solid var(--Light-Grayish-Blue);
 }
 
 .TODOandDelete {
@@ -252,6 +252,7 @@ box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
  color: var(--Very-Dark-Grayish-Blue);
 }
 
+
 /*animations*/
 
 @keyframes bg-desktop {
@@ -261,4 +262,18 @@ box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 @keyframes header {
 0% { margin-top: -15rem}
 100% { margin-top: 7.3rem;}
+}
+
+
+html.dark #MyTodo {
+    color: var(--Light-Grayish-Blue)
+}
+html.dark #ClearCompleted:hover {
+ color: var(--Light-Grayish-Blue);
+}
+html.dark main {
+ background-color: var(--Very-Dark-Desaturated-Blue);
+}
+html.dark #TODO {
+ border-bottom: 1px solid var(--Very-Dark-Grayish-Blue);
 }

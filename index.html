@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="dark">
 <head>
     <!--Config-->
     <meta charset="UTF-8">
@@ -11,13 +11,13 @@
 
     <!--CSS-JS-->
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script type="module" src="index.js"></script>
 
     <title>Todo App</title>
 </head>
 <body>
-    <img src="assets/bg-desktop-dark.jpg" alt="bg-dark" class="bg-desktop-dark">
-    <img src="assets/bg-desktop-light.jpg" alt="bg-light" class="bg-desktop-light">
+    <img src="assets/bg-desktop-dark.jpg" alt="bg-dark" class="bg-desktop-dark" id="btnDark" onclick="toggleMode()">
+    <img src="assets/bg-desktop-light.jpg" alt="bg-light" class="bg-desktop-light" id="btnLight" onclick="toggleMode()">
 
     <header>
     <div class="partOne">
