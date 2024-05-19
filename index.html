@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
 <head>
     <!--Config-->
     <meta charset="UTF-8">
@@ -16,8 +16,11 @@
     <title>Todo App</title>
 </head>
 <body>
-    <img src="assets/bg-desktop-dark.jpg" alt="bg-dark" class="bg-desktop-dark" id="btnDark" onclick="toggleMode()">
-    <img src="assets/bg-desktop-light.jpg" alt="bg-light" class="bg-desktop-light" id="btnLight" onclick="toggleMode()">
+    <img src="assets/bg-desktop-dark.jpg" alt="bg-dark" class="bg-desktop-dark">
+    <img src="assets/bg-desktop-light.jpg" alt="bg-light" class="bg-desktop-light">
+
+    <img src="assets/bg-mobile-dark.jpg" alt="bg-mb-dark" class="bg-mobile-dark">
+     <!--<img src="assets/bg-mobile-light.jpg" alt="bg-mb-light" class="bg-mobile-light">--> 
 
     <header>
     <div class="partOne">
@@ -51,9 +54,22 @@
         <div class="footer">
             <p><span id="itens">5</span> items left</p>
 
+           <div class="functionsDesk">
+            <span id="btnAll">All</span>
+            <span id="btnActive">Active</span>
+            <span id="btnCompleted">Completed</span>
+           </div>
+
             <p id="ClearCompleted">Clear Completed</p>
         </div>
     </main>
+ 
+    <div class="functionsMobi">
+        <span id="btnAll">All</span>
+        <span id="btnActive">Active</span>
+        <span id="btnCompleted">Completed</span>
+    </div>
+
   
 </body>
 </html>
