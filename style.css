@@ -49,6 +49,10 @@ input, body {
 .bg-mobile-dark{
  display: none;
 }
+.bg-mobile-light{
+ display: none;
+}
+
 .bg-desktop-dark {
  width: 100%;
  position: absolute;
@@ -293,8 +297,25 @@ html.dark #btnCompleted:hover {
     color: var(--Light-Grayish-Blue-hover);
     cursor: pointer;
 }
+#btnCompleted, #btnAll, #btnActive {
+    transition: .3s ease-in;
+}
 
 
+#Delete {
+ opacity: 0;
+ transition: .3s ease-in;
+}
+#Delete:hover {
+ filter: brightness(5);
+}
+html:not(.dark) #Delete:hover {
+ filter:contrast(5);
+}
+
+#TODO:hover #Delete {
+ opacity: 1;
+}
 
 
 /*animations*/
@@ -320,7 +341,16 @@ html.dark #btnCompleted:hover {
  }
 
  header {
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+
  width: 35rem;
+ margin: auto;
+ margin-top: 7.3rem;
+
+ animation-name: header;
+ animation-duration: 2.01s;
  }
 
  .input {
@@ -335,12 +365,25 @@ html.dark #btnCompleted:hover {
  width: 35rem;
  }
 
- .bg-mobile-dark{
+ html:not(.dark) .bg-mobile-light {
  display: grid;
  width: 100%;
  position: absolute;
  top: 0;
  z-index: -9999;
+
+ animation-name: bg-desktop;
+ animation-duration: 2s;
+ }
+ html.dark .bg-mobile-dark{
+ display: grid;
+ width: 100%;
+ position: absolute;
+ top: 0;
+ z-index: -9999;
+
+ animation-name: bg-desktop;
+ animation-duration: 2s;
  }
 
  .functionsDesk {
