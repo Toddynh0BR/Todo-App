@@ -5,6 +5,9 @@
  font-family: "Josefin Sans", sans-serif;
 }
 
+
+
+
 input, body {
  font-size: 1.8rem;
 }
@@ -204,7 +207,7 @@ h1 {
  border: 1px solid var(--Light-Grayish-Blue);
  border-radius: 50%;
  height: 2.5rem;
- width: 2.5rem;
+ width: 2.7rem;
 }
 
 
@@ -236,11 +239,6 @@ box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
  font-size: 1.2rem;
 }
 
-#ClearCompleted:hover {
- color: var(--Very-Dark-Grayish-Blue);
- cursor: pointer;
- transition: .3s ease-in-out;
-}
 
 .TODOS {
  display: flex;
@@ -265,65 +263,12 @@ box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
  width: 100%;
 }
 
-.check {
- opacity: 0;
-}
-
-.circle {
- display: flex;
- justify-content: center;
- align-items: center;
-
- border: 1px solid var(--Light-Grayish-Blue);
- border-radius: 50%;
- height: 2.5rem;
- width: 2.7rem;
-}
-
-html.dark .circle:hover {
- border: 1px solid var(--Dark-Hover);
-
-}
-html.dark .circle {
- background-color: var(--Very-Dark-Desaturated-Blue);
-}
-html:not(.dark) {
- background-color: var(--Very-Light-Gray);
-}
-html:not(.dark) .circle:hover{
- border: 1px solid var(--Light-Hover);
- 
-}
-
-.Completed .circle {
-background: rgb(192,88,243);
-background: linear-gradient(331deg, rgba(192,88,243,1) 30%, rgba(87,221,255,1) 70%);
-border: none;
-border: 1px solid var(--Light-Hover);
-}
-
-.Completed:hover .circle {
- border: 1px solid var(--Dark-Hover);
-}
-.Completed .check {
- opacity: 1;
-}
-.circle:hover {
- cursor: pointer;
-}
-
-.Completed {
- text-decoration: line-through;
-}
-
-.Completed #MyTodo {
- opacity: .4;
-}
-
 #MyTodo {
  color: var(--Very-Dark-Grayish-Blue);
 }
 
+
+/*functions-Buttons*/
 .functionsDesk {
  display: flex;
  align-items: center;
@@ -331,7 +276,6 @@ border: 1px solid var(--Light-Hover);
 
  font-weight: 700;
 }
-
 html.dark #btnAll:hover {
     color: var(--Light-Grayish-Blue-hover);
     cursor: pointer;
@@ -348,7 +292,13 @@ html.dark #btnCompleted:hover {
     transition: .3s ease-in;
 }
 
+#ClearCompleted:hover {
+ color: var(--Very-Dark-Grayish-Blue);
+ cursor: pointer;
+ transition: .3s ease-in-out;
+}
 
+/*Delete-Button*/
 #Delete {
  opacity: 0;
  transition: .3s ease-in;
@@ -360,7 +310,6 @@ html.dark #btnCompleted:hover {
 html:not(.dark) #Delete:hover {
  filter:contrast(5);
 }
-
 #TODO:hover #Delete {
  opacity: 1;
 }
@@ -464,3 +413,56 @@ html:not(.dark) #Delete:hover {
  }
 }
 
+/*check-buttons*/
+.Completed {
+ text-decoration: line-through;
+}
+.Completed #MyTodo {
+ opacity: .4;
+}
+
+.circle:hover {
+ cursor: pointer;
+}
+
+
+html.dark .circle:hover {
+ border: 1px solid var(--Dark-Hover);
+
+}
+html.dark .circle {
+ background-color: var(--Very-Dark-Desaturated-Blue);
+}
+html:not(.dark) .circle:hover{
+ border: 1px solid var(--Light-Hover);
+}
+
+.check {
+ opacity: 0;
+}
+
+.circle {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ border: 1px solid var(--Light-Grayish-Blue);
+ border-radius: 50%;
+ height: 2.5rem;
+ width: 2.7rem;
+}
+
+.circle2 {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ border: 1px solid var(--Light-Grayish-Blue);
+ border-radius: 50%;
+ height: 2.5rem;
+ width: 2.7rem;
+}
+
+.hide {
+ display: none;
+}

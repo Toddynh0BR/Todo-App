@@ -1,29 +1,28 @@
 import * as el from './elements.js';
+import status from './status.js';
 
-function UpdateItens(){
- el.itens.textContent = el.TODOS.children.length
+export function UpdateItens(){
+ el.itens.textContent = status.TodosValue
 }
 
-UpdateItens()
-
-function removeItem(event){
+export function removeItem(event){
  const btnDelete = event.target;
  const itemRemove1 = btnDelete.parentElement;
  const itemRemove2 = itemRemove1.parentElement;
  itemRemove2.remove();
+ --status.TodosValue
+
  UpdateItens()
 }
-document.querySelectorAll('#Delete').forEach(btnDelete => {
-    btnDelete.addEventListener('click', removeItem);
-});
 
 
-function itemCompleto(event){
+export function itemCompleto(event){
  const btnCheck = event.target;
  const itemCheck = btnCheck.parentElement;
+ const itemCheck2 = itemCheck.parentElement;
 
- itemCheck.classList.toggle('Completed');
+ itemCheck2.classList.toggle('Completed');
 }
-document.querySelectorAll('.circle').forEach(btnCheck => {
-    btnCheck.addEventListener('click', itemCompleto);
-});
+
+
+
