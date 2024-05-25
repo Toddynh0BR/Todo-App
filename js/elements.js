@@ -9,3 +9,9 @@ export const check= document.querySelector('.circle');
 
 /*Input*/
 export const Input= document.getElementById('todoInput');
+
+/*Functions*/
+export const Footer= document.querySelector('.footer');
+export const btnAll= document.getElementById('btnAll');
+export const btnCompleted= document.getElementById('btnCompleted');
+export const btnActive= document.getElementById('btnActive');

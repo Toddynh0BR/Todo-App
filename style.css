@@ -74,7 +74,7 @@ html:not(.dark) .btnSun{
  display: none;
 }
 html.dark .input {
-    background-color: var(--Very-Dark-Desaturated-Blue);
+ background-color: var(--Very-Dark-Desaturated-Blue);
 }
 
 html.dark #MyTodo {
@@ -114,8 +114,8 @@ html.dark .btnMoon{
  display: none;
 }
 html:not(.dark) #btnAll:hover, #btnActive:hover, #btnCompleted:hover {
-    color: var(--Very-Dark-Grayish-Blue);
-    cursor: pointer;
+ color: var(--Very-Dark-Grayish-Blue);
+ cursor: pointer;
 }
 
 
@@ -178,6 +178,7 @@ h1 {
 
  padding: 1.6rem 2rem;
  border-radius: .5rem;
+ transition: .3s ease-in;
 }
 
 #todoInput {
@@ -207,7 +208,7 @@ h1 {
  border: 1px solid var(--Light-Grayish-Blue);
  border-radius: 50%;
  height: 2.5rem;
- width: 2.7rem;
+ width: 2.6rem;
 }
 
 
@@ -225,6 +226,7 @@ margin-top: 2.5rem;
 overflow: hidden;
 background-color: var(--Very-Light-Gray);
 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+transition: .3s ease-in;
 }
 
 .footer {
@@ -237,6 +239,7 @@ box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 
  color: var(--Dark-Grayish-Blue);
  font-size: 1.2rem;
+ transition: .3s ease-in;
 }
 
 
@@ -292,6 +295,7 @@ html.dark #btnCompleted:hover {
     transition: .3s ease-in;
 }
 
+
 #ClearCompleted:hover {
  color: var(--Very-Dark-Grayish-Blue);
  cursor: pointer;
@@ -326,6 +330,73 @@ html:not(.dark) #Delete:hover {
 @keyframes header {
 0% { margin-top: -15rem}
 100% { margin-top: 7.3rem;}
+}
+
+
+/*check-buttons*/
+.circle:hover {
+ cursor: pointer;
+}
+
+html.dark .circle:hover {
+ border: 1px solid var(--Dark-Hover);
+
+}
+html.dark .circle {
+ background-color: var(--Very-Dark-Desaturated-Blue);
+}
+html:not(.dark) .circle:hover{
+ border: 1px solid var(--Light-Hover);
+}
+
+.check {
+ opacity: 0;
+}
+
+.circle {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ border: 1px solid var(--Light-Grayish-Blue);
+ border-radius: 50%;
+ height: 2.5rem;
+ width: 2.6rem;
+ transition: .3s ease-in;
+}
+
+.circle2 {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ border-radius: 50%;
+ height: 2.6rem;
+ width: 2.9rem;
+
+ background: rgb(192,88,243);
+ background: linear-gradient(331deg, rgba(192,88,243,1) 30%, rgba(87,221,255,1) 70%);
+ border: none;
+ transition: .3s ease-in;
+}
+
+.circle2:hover {
+ cursor: pointer;
+ filter: brightness(105%);
+}
+
+.Completed .circle {
+ display: none;
+}
+#TODO:not(.Completed) .circle2{
+ display: none;
+}
+
+.Completed {
+ text-decoration: line-through;
+}
+.Completed #MyTodo {
+ opacity: .4;
 }
 
 
@@ -408,61 +479,25 @@ html:not(.dark) #Delete:hover {
  padding: 2.3rem;
  }
 
- html:not(.dark) .functionsMobi{
+html:not(.dark) .functionsMobi{
  background-color: var(--Very-Light-Gray);
- }
 }
-
-/*check-buttons*/
-.Completed {
- text-decoration: line-through;
-}
-.Completed #MyTodo {
- opacity: .4;
-}
-
-.circle:hover {
- cursor: pointer;
 }
 
 
-html.dark .circle:hover {
- border: 1px solid var(--Dark-Hover);
-
-}
-html.dark .circle {
- background-color: var(--Very-Dark-Desaturated-Blue);
-}
-html:not(.dark) .circle:hover{
- border: 1px solid var(--Light-Hover);
-}
-
-.check {
- opacity: 0;
-}
-
-.circle {
- display: flex;
- justify-content: center;
- align-items: center;
-
- border: 1px solid var(--Light-Grayish-Blue);
- border-radius: 50%;
- height: 2.5rem;
- width: 2.7rem;
-}
-
-.circle2 {
- display: flex;
- justify-content: center;
- align-items: center;
-
- border: 1px solid var(--Light-Grayish-Blue);
- border-radius: 50%;
- height: 2.5rem;
- width: 2.7rem;
-}
-
-.hide {
+html.Completeds  #TODO:not(.Completed) {
  display: none;
+}
+html.Actives #TODO.Completed{
+ display: none;
+}
+
+html.All #btnAll {
+ color: var(--Bright-Blue);
+}
+html.Actives #btnActive {
+ color: var(--Bright-Blue);
+}
+html.Completeds #btnCompleted {
+ color: var(--Bright-Blue);
 }
