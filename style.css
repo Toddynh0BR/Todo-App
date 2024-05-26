@@ -482,6 +482,7 @@ html:not(.dark) .circle:hover{
 html:not(.dark) .functionsMobi{
  background-color: var(--Very-Light-Gray);
 }
+
 }
 
 
@@ -500,4 +501,20 @@ html.Actives #btnActive {
 }
 html.Completeds #btnCompleted {
  color: var(--Bright-Blue);
+}
+
+
+html.All #btnAllMB {
+ color: var(--Bright-Blue);
+}
+html.Actives #btnActiveMB {
+ color: var(--Bright-Blue);
+}
+html.Completeds #btnCompletedMB {
+ color: var(--Bright-Blue);
+}
+
+
+#ClearCompleted {
+ opacity: 0;
 }

@@ -2,15 +2,17 @@ import * as el from './elements.js';
 import status from './status.js';
 
 export function UpdateItens(){
- el.itens.textContent = status.TodosValue
+ el.itens.textContent = el.TODOS.children.length;
+ //status.TodosValue
 }
 
 export function removeItem(event){
  const btnDelete = event.target;
  const itemRemove1 = btnDelete.parentElement;
  const itemRemove2 = itemRemove1.parentElement;
- itemRemove2.remove();
- --status.TodosValue;
+ const itemRemove3 = itemRemove2.parentElement;
+ itemRemove3.remove();
+
  --status.CompletedItens;
  console.log(status.CompletedItens);
  UpdateItens()
@@ -38,5 +40,12 @@ export function itemIncompleto(event){
 }
 
 
+export function removeCompletedTodos() {
+alert('oi')
+  el.todo.forEach(todo => {
+      todo.classList.remove('Completed')
+  });
+}
 
+el.ClearCompleted.addEventListener('click', removeCompletedTodos);
 

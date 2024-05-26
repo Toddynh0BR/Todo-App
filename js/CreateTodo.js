@@ -25,6 +25,9 @@ el.Input.addEventListener('keypress', (event) => {
      if (event.key !='Enter') {
         return
      }
+     if (el.Input.value=== ""){
+      return
+     }
       
      const row = CreateTodo()
      
@@ -37,10 +40,10 @@ el.Input.addEventListener('keypress', (event) => {
 
      el.TODOS.appendChild(row)
 
-     ++status.TodosValue
      UpdateItens()
      el.Input.value = ""
 
 });
+
 
 
