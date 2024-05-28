@@ -1,6 +1,8 @@
-import { UpdateItens, removeItem, itemCompleto, itemIncompleto } from './itens.js';
-import * as el from './elements.js'
-import status from './status.js'
+import { UpdateItens, removeItem, itemCompleto, itemIncompleto, addEventListeners } from './itens.js';
+import * as el from './elements.js';
+
+
+
 
 function CreateTodo() {
     const div = document.createElement('div');
@@ -41,9 +43,11 @@ el.Input.addEventListener('keypress', (event) => {
      el.TODOS.appendChild(row)
 
      UpdateItens()
-     el.Input.value = ""
 
+     el.Input.value = ""
 });
+
+
 
 
 

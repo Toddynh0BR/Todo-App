@@ -44,6 +44,23 @@ export function itemIncompleto(event){
  itemInCheck2.classList.remove('Completed');
 }
 
+export function addEventListeners() {
+  const deleteButtons = document.querySelectorAll('#Delete');
+  deleteButtons.forEach(btnDelete => {
+      btnDelete.addEventListener('click', removeItem);
+  });
+
+  const check = document.querySelectorAll('.check');
+  check.forEach(btnCheck => {
+    btnCheck.addEventListener('click', itemCompleto);
+  })
+
+  const incheck = document.querySelectorAll('.inCheck');
+  incheck.forEach(btnInCheck => {
+    btnInCheck.addEventListener('click', itemIncompleto);
+  })
+}
+
 function removeDivsWithClassC() {
   const container = document.getElementById('TODOS');
   const divs = container.getElementsByClassName('C');
