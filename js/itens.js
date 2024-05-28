@@ -23,9 +23,12 @@ export function itemCompleto(event){
  const btnCheck = event.target;
  const itemCheck = btnCheck.parentElement;
  const itemCheck2 = itemCheck.parentElement;
+ const itemCheck3 = itemCheck2.parentElement;
+
 
  ++status.CompletedItens;
  console.log(status.CompletedItens);
+ itemCheck3.classList.add('C');
  itemCheck2.classList.add('Completed');
 }
 
@@ -33,19 +36,29 @@ export function itemIncompleto(event){
  const btnInCheck = event.target;
  const itemInCheck = btnInCheck.parentElement;
  const itemInCheck2 = itemInCheck.parentElement;
+ const itemInCheck3 = itemInCheck2.parentElement;
 
  --status.CompletedItens;
  console.log(status.CompletedItens);
+ itemInCheck3.classList.remove('C');
  itemInCheck2.classList.remove('Completed');
 }
 
-
-export function removeCompletedTodos() {
-alert('oi')
-  el.todo.forEach(todo => {
-      todo.classList.remove('Completed')
+function removeDivsWithClassC() {
+  const container = document.getElementById('TODOS');
+  const divs = container.getElementsByClassName('C');
+  
+  const divsArray = Array.from(divs);
+  
+  divsArray.forEach(div => {
+      container.removeChild(div);
   });
+ 
+  UpdateItens()
 }
 
-el.ClearCompleted.addEventListener('click', removeCompletedTodos);
+// Call the function to remove the divs with class 'C'
+
+
+el.ClearCompleted.addEventListener('click', removeDivsWithClassC);
 

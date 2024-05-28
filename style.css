@@ -207,7 +207,7 @@ h1 {
 .circle-input {
  border: 1px solid var(--Light-Grayish-Blue);
  border-radius: 50%;
- height: 2.5rem;
+ height: 2.6rem;
  width: 2.6rem;
 }
 
@@ -360,7 +360,7 @@ html:not(.dark) .circle:hover{
 
  border: 1px solid var(--Light-Grayish-Blue);
  border-radius: 50%;
- height: 2.5rem;
+ height: 2.6rem;
  width: 2.6rem;
  transition: .3s ease-in;
 }
@@ -514,7 +514,3 @@ html.Completeds #btnCompletedMB {
  color: var(--Bright-Blue);
 }
 
-
-#ClearCompleted {
- opacity: 0;
-}

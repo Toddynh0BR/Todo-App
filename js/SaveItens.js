@@ -7,20 +7,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function saveItems() {
   const items = [];
-  const listItems = document.getElementById("todo-list").children;
+  const listItems = document.getElementById("TODOS").children;
   for (let item of listItems) {
-    items.push(item.textContent);
+    items.push(item);
   }
   localStorage.setItem("todoItems", JSON.stringify(items));
 }
 
 function loadItems() {
+  const div = document.createElement("div");
+  div.id = "TODO"
   const savedItems = JSON.parse(localStorage.getItem("todoItems"));
   if (savedItems) {
-    const list = document.getElementById("todo-list");
+    const list = document.getElementById("TODOS");
     for (let item of savedItems) {
-      const listItem = document.createElement("li");
-      listItem.textContent = item;
+      const listItem = div
+      listItem = item;
       list.appendChild(listItem);
     }
   }
